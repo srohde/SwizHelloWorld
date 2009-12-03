@@ -16,8 +16,11 @@
 			[Bindable]
 			public var model:HelloWorldModel;
 			
+			// Button click handler
 			protected function clickHandler( event : MouseEvent ) : void {
 				var message:String = messageInput.text;
+				
+				// create event and set bubbles to true
 				var e:HelloWorldEvent = new HelloWorldEvent( HelloWorldEvent.HELLO_WORLD, message, true );
 				dispatchEvent( e );
 			}
@@ -27,11 +30,12 @@
 	<fx:Declarations>
 	</fx:Declarations>
 
-
 	<s:TextInput id="messageInput"
 				 text="Hello World" />
+
 	<s:Button label="Fire Event"
 			  click="clickHandler(event)" />
 
 	<s:Label text="{model.message}" />
+
 </s:Group>
